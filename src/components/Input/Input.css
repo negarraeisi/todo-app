@@ -1,0 +1,13 @@
+.InputArea{
+    text-align: left;
+    margin: 1rem;
+    margin-left: 50px;
+}
+
+input[type="text"] {
+    height: 40px;
+    width: 50%;
+    background-color: rgb(219, 208, 208);
+    border: 1px rgb(196, 196, 196) solid;
+    border-radius: 10px;
+}
