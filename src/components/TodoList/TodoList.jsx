@@ -6,7 +6,7 @@ function TodoList() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/todos")
+    fetch("https://todo-api-b0ya.onrender.com/todos")
       .then((res) => res.json())
       .then((data) => setTodos(data))
       .catch((err) => console.error("Error fetching", err));
@@ -14,7 +14,7 @@ function TodoList() {
 
   const handleToggle = async (id, completed) => {
     try {
-      await fetch(`http://localhost:3001/todos/${id}`, {
+      await fetch(`https://todo-api-b0ya.onrender.com/todos/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ completed: !completed }),
@@ -31,7 +31,7 @@ function TodoList() {
 
   const addTodo = async (newTodo) => {
     try {
-      const response = await fetch(`http://localhost:3001/todos`, {
+      const response = await fetch(`https://todo-api-b0ya.onrender.com/todos`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -48,7 +48,7 @@ function TodoList() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:3001/todos/${id}`, {
+      await fetch(`https://todo-api-b0ya.onrender.com/todos/${id}`, {
         method: "DELETE",
       });
       setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
